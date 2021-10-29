@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { Col, Container, Form, FormControl, Row } from "react-bootstrap"
+import { Col, Container, Form, FormControl, ListGroup, Row } from "react-bootstrap"
 
 
 
 const HomePage=()=>{
     const[query,setQuery]=useState('')
-    const[positionData,setPositionData]=useState([])
+    const[positionData,setPositionData]=useState()
 
     //************************************** POSITION DATA ***************************************
     const handleChange=(e)=>{setQuery(e.target.value)}
@@ -29,6 +29,7 @@ const HomePage=()=>{
         }
         console.log('POSITION DATA FROM FETCH',positionData)
     }
+    //****************************************************************************
 
     return(
         <Container fluid className="px-4">
@@ -45,8 +46,28 @@ const HomePage=()=>{
                             value={query}
                             onChange={(e)=>handleChange(e)}
                             placeholder="text a cityname"
-                        />
+                            />
                     </Form>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    {positionData&&(
+                    <ListGroup>
+                        <ListGroup.Item className='bg-dark'>
+                            temperature: {parseInt(positionData.main.temp-273.15)}°C | 
+                            clouds: {positionData.clouds.all}% 
+                        </ListGroup.Item>
+                        <ListGroup.Item className='bg-dark'>
+                            max today: {parseInt(positionData.main.temp_max-273.15)}°C | 
+                            min today: {parseInt(positionData.main.temp_min-273.15)}°C
+                        </ListGroup.Item>
+                        <ListGroup.Item className='bg-dark'>
+                            humidity: {positionData.main.humidity}% | 
+                            pressure: {positionData.main.pressure} mbar
+                        </ListGroup.Item>
+                    </ListGroup>
+                    )}
                 </Col>
             </Row>
         </Container>
