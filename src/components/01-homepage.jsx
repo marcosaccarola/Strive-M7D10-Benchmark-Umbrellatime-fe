@@ -20,13 +20,13 @@ const HomePage=()=>{
             if(response.ok){
                 let data=await response.json()
                 setActualData(data)
+                console.log('ACTUAL DATA FROM FETCH',data)
             }else{
                 console.log('SOMETHING WENT WRONG')
             }
         } catch (error) {
             console.log(error)
         }
-        console.log('ACTUAL DATA FROM FETCH',actualData)
     }
     //********************************* FORECAST DATA BY POSITION *******************************************
     const URL_FORECAST='http://api.openweathermap.org/data/2.5/forecast?q='
@@ -36,19 +36,19 @@ const HomePage=()=>{
             if(response.ok){
                 let data=await response.json()
                 setForecastData(data)
+                console.log('FORECAST DATA FROM FETCH',data)
             }else{
                 console.log('SOMETHING WENT WRONG')
             }
         } catch (error) {
             console.log(error)
         }
-        console.log('FORECAST DATA FROM FETCH',forecastData)
     }
 
     return(
-        <Container fluid className="px-4">
+        <Container fluid className="w-50">
             <Row>
-                <Col>
+                <Col className='my-5 text-dark'>
                     <h1>UMBRELLA TIME</h1>
                 </Col>
             </Row>
@@ -67,22 +67,22 @@ const HomePage=()=>{
             <Row>
                 <Col>
                     {actualData&&(
-                    <ListGroup>
+                    <ListGroup className=''>
                         <ListGroup.Item className='bg-success text-dark'>
                             AT THIS EXACT MOMENT
                         </ListGroup.Item>
-                        <ListGroup.Item className='bg-dark'>
+                        <ListGroup.Item className='bg-dark text-left'>
                             place: {actualData.name}, {actualData.sys.country}
                         </ListGroup.Item>
-                        <ListGroup.Item className='bg-dark'>
+                        <ListGroup.Item className='bg-dark text-left'>
                             temperature: {parseInt(actualData.main.temp-273.15)}°C | 
                             clouds: {actualData.clouds.all}% 
                         </ListGroup.Item>
-                        <ListGroup.Item className='bg-dark'>
+                        <ListGroup.Item className='bg-dark text-left'>
                             max today: {parseInt(actualData.main.temp_max-273.15)}°C | 
                             min today: {parseInt(actualData.main.temp_min-273.15)}°C
                         </ListGroup.Item>
-                        <ListGroup.Item className='bg-dark'>
+                        <ListGroup.Item className='bg-dark text-left'>
                             humidity: {actualData.main.humidity}% | 
                             pressure: {actualData.main.pressure} mbar
                         </ListGroup.Item>
