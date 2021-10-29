@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Col, Container, Form, FormControl, ListGroup, Row } from "react-bootstrap"
+import RealTimeWeather from "./01a-RealTimeWeather"
 
 const HomePage=()=>{
     const[query,setQuery]=useState('')
@@ -71,26 +72,7 @@ const HomePage=()=>{
             <Row>
                 <Col>
                     {actualData&&(
-                    <ListGroup>
-                        <ListGroup.Item className='bg-success text-dark'>
-                            AT THIS EXACT MOMENT
-                        </ListGroup.Item>
-                        <ListGroup.Item className='bg-dark text-left'>
-                            place: {actualData.name}, {actualData.sys.country}
-                        </ListGroup.Item>
-                        <ListGroup.Item className='bg-dark text-left'>
-                            temperature: {parseInt(actualData.main.temp-273.15)}°C | 
-                            clouds: {actualData.clouds.all}% 
-                        </ListGroup.Item>
-                        <ListGroup.Item className='bg-dark text-left'>
-                            max today: {parseInt(actualData.main.temp_max-273.15)}°C | 
-                            min today: {parseInt(actualData.main.temp_min-273.15)}°C
-                        </ListGroup.Item>
-                        <ListGroup.Item className='bg-dark text-left'>
-                            humidity: {actualData.main.humidity}% | 
-                            pressure: {actualData.main.pressure} mbar
-                        </ListGroup.Item>
-                    </ListGroup>
+                        <RealTimeWeather actualData={actualData} />
                     )}
                 </Col>
             </Row>
