@@ -46,10 +46,14 @@ const HomePage=()=>{
     }
 
     return(
-        <Container fluid className="w-50">
+        <Container fluid className="w-50 mt-5">
             <Row>
-                <Col className='my-5 text-dark'>
-                    <h1>UMBRELLA TIME</h1>
+                <Col>
+                    <ListGroup>
+                        <ListGroup.Item className='bg-dark text-white'>
+                            UMBRELLA TIME
+                        </ListGroup.Item>
+                    </ListGroup>
                 </Col>
             </Row>
             <Row>
@@ -67,7 +71,7 @@ const HomePage=()=>{
             <Row>
                 <Col>
                     {actualData&&(
-                    <ListGroup className=''>
+                    <ListGroup>
                         <ListGroup.Item className='bg-success text-dark'>
                             AT THIS EXACT MOMENT
                         </ListGroup.Item>
