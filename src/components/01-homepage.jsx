@@ -4,16 +4,16 @@ import { getActualData, getForecastData } from "../utils/fetch"
 import RealTimeWeather from "./01a-RealTimeWeather"
 import ForecastWeather from "./01b-ForecastWeather"
 
-const HomePage=()=>{
+const HomePage=({actualData,forecastData})=>{
     const[query,setQuery]=useState('')
-    const[actualData,setActualData]=useState()
-    const[forecastData,setForecastData]=useState()
+    // const[actualData,setActualData]=useState()
+    // const[forecastData,setForecastData]=useState()
     
     const handleChange=(e)=>{setQuery(e.target.value)}
     const handleSubmit=(e)=>{
         e.preventDefault()
-        getActualData(query,setActualData)
-        getForecastData(query,setForecastData)
+        // getActualData(query,setActualData)
+        // getForecastData(query,setForecastData)
     }
 
 
