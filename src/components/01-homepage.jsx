@@ -41,14 +41,14 @@ const HomePage=({actualData,forecastData})=>{
                 </Col>
             </Row>
             <Row>
-                <Col>
+                <Col className='text-light'>
                     {actualData&&(
                         <RealTimeWeather actualData={actualData} />
                     )}
                 </Col>
             </Row>
             <Row>
-                <Col>
+                <Col className='text-light'>
                     {forecastData&&forecastData.list.map((f)=>(
                         <ForecastWeather f={f} />
                     ))}
