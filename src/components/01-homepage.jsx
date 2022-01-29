@@ -3,6 +3,7 @@ import { Col, Container, Form, FormControl, ListGroup, Row } from "react-bootstr
 import { getActualData, getForecastData } from "../utils/fetch"
 import RealTimeWeather from "./01a-RealTimeWeather"
 import ForecastWeather from "./01b-ForecastWeather"
+import Widget from "./02-Widget"
 
 const HomePage=({actualData,forecastData})=>{
     const[query,setQuery]=useState('')
@@ -18,8 +19,11 @@ const HomePage=({actualData,forecastData})=>{
 
 
     return(
-        <Container fluid className="w-50 mt-5">
-            <Row>
+        <Container fluid className="">
+
+            <Widget />
+
+            {/* <Row>
                 <Col>
                     <ListGroup>
                         <ListGroup.Item className='bg-dark text-white'>
@@ -27,8 +31,8 @@ const HomePage=({actualData,forecastData})=>{
                         </ListGroup.Item>
                     </ListGroup>
                 </Col>
-            </Row>
-            <Row>
+            </Row> */}
+            {/* <Row>
                 <Col>
                     <Form onSubmit={handleSubmit}>
                         <FormControl 
@@ -39,8 +43,8 @@ const HomePage=({actualData,forecastData})=>{
                             />
                     </Form>
                 </Col>
-            </Row>
-            <Row>
+            </Row> */}
+            {/* <Row>
                 <Col className='text-light'>
                     {actualData&&(
                         <RealTimeWeather actualData={actualData} />
@@ -53,7 +57,7 @@ const HomePage=({actualData,forecastData})=>{
                         <ForecastWeather f={f} />
                     ))}
                 </Col>
-            </Row>
+            </Row> */}
         </Container>
     )
 }
