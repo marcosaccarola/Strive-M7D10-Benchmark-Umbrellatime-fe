@@ -6,16 +6,16 @@ import ForecastWeather from "./01b-ForecastWeather"
 import Widget from "./02-Widget"
 
 const HomePage=({actualData,forecastData})=>{
-    const[query,setQuery]=useState('')
+    // const[query,setQuery]=useState('')
     // const[actualData,setActualData]=useState()
     // const[forecastData,setForecastData]=useState()
     
-    const handleChange=(e)=>{setQuery(e.target.value)}
-    const handleSubmit=(e)=>{
-        e.preventDefault()
+    // const handleChange=(e)=>{setQuery(e.target.value)}
+    // const handleSubmit=(e)=>{
+    //     e.preventDefault()
         // getActualData(query,setActualData)
         // getForecastData(query,setForecastData)
-    }
+    // }
 
 
     return(

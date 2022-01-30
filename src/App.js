@@ -5,6 +5,8 @@ import HomePage from './components/01-Homepage';
 import Bar from './components/00-Bar';
 import { useState } from 'react';
 import { getActualData, getForecastData } from './utils/fetch';
+import Widget from './components/02-Widget';
+// import TransparentContainer from './components/01c-TransparentContainer';
 
 function App() {
 
@@ -23,7 +25,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Bar handleChange={handleChange} handleSubmit={handleSubmit} />
-        <HomePage actualData={actualData} forecastData={forecastData} />
+        {/* <TransparentContainer /> */}
+        {actualData&&
+        <Widget actualData={actualData} forecastData={forecastData} />
+        }
       </header>
     </div>
   );
