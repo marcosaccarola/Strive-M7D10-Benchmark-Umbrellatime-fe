@@ -26,7 +26,7 @@ function App() {
       <header className="App-header">
         <Bar handleChange={handleChange} handleSubmit={handleSubmit} />
         {/* <TransparentContainer /> */}
-        {actualData&&
+        {actualData&&forecastData&&
         <Widget actualData={actualData} forecastData={forecastData} />
         }
       </header>

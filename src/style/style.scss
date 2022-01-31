@@ -76,16 +76,16 @@ body {
 }
 .main {
   margin-top: 6vh;
-  margin-bottom: 6vh;
-  height: 70vh;
-  max-width: 50vw;
-  background: black;
+  margin-bottom: 3vh;
+  // height: 70vh;
+  // max-width: 50vw;
+  // background: black;
   // opacity: 0.2;
   background: rgba(255, 255, 255, 0.2);
 }
 .start {
   text-align: start;
-  background: rgba(0, 0, 0, 1);
+  background: rgba(255, 255, 255, 0.1);
 }
 .temperature {
   font-size: 5rem;
