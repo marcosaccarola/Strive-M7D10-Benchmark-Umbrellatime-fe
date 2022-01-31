@@ -2,6 +2,7 @@ import {Col, Container, Row} from 'react-bootstrap'
 import {FiClock} from 'react-icons/fi'
 import {BsCalendarEvent} from 'react-icons/bs'
 
+
 const Widget=({actualData,forecastData})=>{
 
     return(
@@ -9,20 +10,21 @@ const Widget=({actualData,forecastData})=>{
 
             <Row>
                 <Col>
-                <Container>{actualData.name}</Container>
+                <Container className='mt-3'>{actualData.name}</Container>
                 </Col>
             </Row>
 
             <Row>
-                <Col>
-                    <Container className='start my-3 bg-secondary rounded'>
+                <Col md={6}>
+                    <Container className='text-center my-3 bg-secondary rounded'>
                         <img src={`http://openweathermap.org/img/wn/${actualData.weather[0].icon}@4x.png`} alt='Weather icon' />
-                        <span className='temperature'>{parseInt(actualData.main.temp-273.15)}°C</span>
+                        <span className='temperature-now pe-5'>{parseInt(actualData.main.temp-273.15)}°C</span>
                     </Container>
                 </Col>
-                <Col>
-                    <Container className='start forecast my-3 rounded'>
+                <Col md={6}>
+                    <Container className='text-center mb-3 opacity-01 rounded'>
         {forecastData.list.map(f=>
+                        <>
                         <Container>
                             <BsCalendarEvent className='mx-3' />
                             <span className=''>{f.dt_txt.slice(8,10)}</span>
@@ -31,6 +33,7 @@ const Widget=({actualData,forecastData})=>{
                             <img className='mx-3' src={`http://openweathermap.org/img/wn/${f.weather[0].icon}.png`} alt='Weather icon' />
                             <span className=''>{parseInt(f.main.temp-273.15)}°C</span>
                         </Container>
+                        </>
         )}
                         {/* <Container>
                             <span className='forecast'>{forecastData.list[1].dt_txt.slice(11,16)}</span>

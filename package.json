@@ -1,6 +1,6 @@
 {
   "name": "strive-benchmark-m7-umbrellatime-fe",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
