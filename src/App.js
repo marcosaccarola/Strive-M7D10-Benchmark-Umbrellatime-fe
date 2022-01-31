@@ -6,6 +6,7 @@ import Bar from './components/00-Bar';
 import { useState } from 'react';
 import { getActualData, getForecastData } from './utils/fetch';
 import Widget from './components/02-Widget';
+import Footer from './components/03-Footer';
 // import TransparentContainer from './components/01c-TransparentContainer';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         {actualData&&forecastData&&
         <Widget actualData={actualData} forecastData={forecastData} />
         }
+        <Footer />
       </header>
     </div>
   );
