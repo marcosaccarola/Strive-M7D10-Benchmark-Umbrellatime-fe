@@ -1,5 +1,5 @@
 const APP_ID=process.env.REACT_APP_ID
-const APP_CORS=process.env.REACT_APP_CORS
+// const APP_CORS=process.env.REACT_APP_CORS
 //************************************** ACTUAL DATA BY POSITION ***************************************
 const URL='http://api.openweathermap.org/data/2.5/weather?q='
 export const getActualData=async(query,setActualData)=>{
