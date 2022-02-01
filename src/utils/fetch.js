@@ -3,7 +3,7 @@ const APP_ID=process.env.REACT_APP_APP_ID
 const URL='http://api.openweathermap.org/data/2.5/weather?q='
 export const getActualData=async(query,setActualData)=>{
     try {
-        let response=await fetch(URL+query+APP_ID)
+        let response=await fetch(URL+query)
         if(response.ok){
             let data=await response.json()
             setActualData(data)
@@ -19,7 +19,7 @@ export const getActualData=async(query,setActualData)=>{
 const URL_FORECAST='http://api.openweathermap.org/data/2.5/forecast?q='
 export const getForecastData=async(query,setForecastData)=>{
     try {
-        let response=await fetch(URL_FORECAST+query+APP_ID)
+        let response=await fetch(URL_FORECAST+query)
         if(response.ok){
             let data=await response.json()
             setForecastData(data)
