@@ -1,7 +1,7 @@
 const APP_ID=process.env.REACT_APP_ID
 
 //************************************** ACTUAL DATA BY POSITION ***************************************
-const URL='http://api.openweathermap.org/data/2.5/weather?q='
+const URL='https://api.openweathermap.org/data/2.5/weather?q='
 export const getActualData=async(query,setActualData)=>{
     try {
         let response=await fetch(URL+query+'&appid='+APP_ID)
@@ -17,7 +17,7 @@ export const getActualData=async(query,setActualData)=>{
     }
 }
 //********************************* FORECAST DATA BY POSITION *******************************************
-const URL_FORECAST='http://api.openweathermap.org/data/2.5/forecast?q='
+const URL_FORECAST='https://api.openweathermap.org/data/2.5/forecast?q='
 export const getForecastData=async(query,setForecastData)=>{
     try {
         let response=await fetch(URL_FORECAST+query+'&appid='+APP_ID)
