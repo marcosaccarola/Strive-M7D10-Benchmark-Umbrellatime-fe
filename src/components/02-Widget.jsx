@@ -7,7 +7,7 @@ import {FaWind} from 'react-icons/fa'
 const Widget=({actualData,forecastData})=>{
 
     return(
-    <Container className=' rounded'>
+    <Container className='rounded'>
 
         <Row>
             <Col>
@@ -24,17 +24,6 @@ const Widget=({actualData,forecastData})=>{
                 <Container className='my-3 py-3 d-flex justify-content-center opacity-01 rounded'>
                     {/* <Table> */}
                         <tbody className=''>
-                        {/* <tr>
-                            <td><span className='text-start d-block pe-5'>MAX</span></td>
-                            <td><span className='text-end d-block'>{parseInt(actualData.main.temp_max-273.15)}</span></td>
-                            <td><span className='text-start d-block ps-3'>°C</span></td>
-                        </tr>
-                        <tr>
-                            <td><span className='text-start d-block pe-5'>Min</span></td>
-                            <td><span className='text-end d-block'>{parseInt(actualData.main.temp_min-273.15)}</span></td>
-                            <td><span className='text-start d-block ps-3'>°C</span></td>
-                        </tr>
-                        <tr><hr/></tr> */}
                         <tr>
                             <td><span className='text-start d-block pe-5'>Sunrise</span></td>
                             <td><span className='text-end d-block'>{Math.floor(actualData.sys.sunrise/(1000*60*60*60)) + ":" + Math.floor(actualData.sys.sunrise/(1000*60))%60}</span></td>
@@ -60,9 +49,7 @@ const Widget=({actualData,forecastData})=>{
                             <td><span className='text-start d-block pe-5'>Pressure</span></td>
                             <td><span className='text-end d-block'>{actualData.main.pressure}</span></td>
                             <td><span className='text-start d-block ps-3'>mBar</span></td>
-                        </tr>
-                    
-                                
+                        </tr>                             
                         </tbody>
                     {/* </Table> */}
                 </Container>
@@ -102,7 +89,6 @@ const Widget=({actualData,forecastData})=>{
                 </Container>
             </Col>
         </Row>
-
 
     </Container>
     )
