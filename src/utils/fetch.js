@@ -1,4 +1,4 @@
-const APP_ID=process.env.appid
+const APP_ID=process.env.REACT_APP_ID
 //************************************** ACTUAL DATA BY POSITION ***************************************
 const URL='http://api.openweathermap.org/data/2.5/weather?q='
 export const getActualData=async(query,setActualData)=>{
