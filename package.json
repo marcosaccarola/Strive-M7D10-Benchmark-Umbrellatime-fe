@@ -1,6 +1,6 @@
 {
-  "name": "strive-benchmark-m7-umbrellatime-fe",
-  "version": "0.13.0",
+  "name": "umbrellatime",
+  "version": "0.14.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -16,7 +16,6 @@
     "sass": "^1.49.0",
     "web-vitals": "^1.1.2"
   },
-  "optionalDependencies": [],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
