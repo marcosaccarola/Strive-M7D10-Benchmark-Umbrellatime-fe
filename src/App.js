@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import './style/style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css'
-// import HomePage from './components/01-Homepage';
+import HomePage from './components/01-Homepage';
 import Bar from './components/00-Bar';
 import { useState } from 'react';
 import { getActualData, getForecastData } from './utils/fetch';
