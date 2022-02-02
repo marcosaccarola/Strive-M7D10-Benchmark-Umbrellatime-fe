@@ -6,7 +6,7 @@ const Bar=({handleChange,handleSubmit})=>{
 
     return(
         <>
-        <Navbar sticky="top" bg="dark" variant="dark">
+        <Navbar sticky="top" bg="black" variant="dark">
             <Container>
 
             <Navbar.Brand href="#home">

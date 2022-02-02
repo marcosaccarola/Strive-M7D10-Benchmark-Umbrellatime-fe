@@ -56,10 +56,16 @@ const Widget=({actualData,forecastData})=>{
             </Col>
 
             <Col md={6}>
-                <Container className='my-3 opacity-01 rounded'>
-                    <span className='d-block-inline'>Forecast</span>
+                <Container className='my-3 opacity-01 rounded pb-2'>
                         <Table className='text-white'>
-                            <tbody>
+                            <tbody className=''>
+                            <tr>
+                            <td colSpan={7}>
+                                <div className='text-center mt-2'>
+                                <BsCalendarEvent className='me-3 text-dark' />Today
+                                </div>
+                            </td>
+                            </tr>
     {forecastData.list.map(f=>
                     <>
         {f.dt_txt.slice(11,13)==='00'&&
@@ -72,15 +78,15 @@ const Widget=({actualData,forecastData})=>{
                             </tr>
         }
                             <tr>
-                            <td><FiClock className='text-dark' /></td>
+                            <td><FiClock className='text-secondary' /></td>
                             <td>{f.dt_txt.slice(11,13)}</td>
                             <td>
                                 <img className='ms-4' src={`http://openweathermap.org/img/wn/${f.weather[0].icon}.png`} alt='Weather icon' />
                             </td>
-                            <td className='text-start'>{parseInt(f.main.temp-273.15)}°C</td>
+                            <td className='text-start'>{parseInt(f.main.temp-273.15)}<span className='text-minor'>°C</span></td>
                             <td><FaWind className='ms-4' /></td>
-                            <td>{f.wind.deg}°</td>
-                            <td>{parseInt(f.wind.speed)}Km/h</td>
+                            <td className='text-minor'>{f.wind.deg}°</td>
+                            <td className=''>{parseInt(f.wind.speed)}<span className='text-minor'>Km/h</span></td>
                             </tr>
                     </>
     )}
