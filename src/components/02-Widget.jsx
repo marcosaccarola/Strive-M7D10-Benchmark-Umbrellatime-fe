@@ -17,11 +17,11 @@ const Widget=({actualData,forecastData})=>{
 
         <Row>
             <Col lg={6}>
-                <Container className='my-3 opacity-01 rounded'>
+                <Container className='my-3 opacity-shortstory rounded'>
                     <img src={`http://openweathermap.org/img/wn/${actualData.weather[0].icon}@4x.png`} alt='Weather icon' />
                     <span className='temperature-now pe-5'>{parseInt(actualData.main.temp-273.15)}°C</span>
                 </Container>
-                <Container className='my-3 py-3 d-flex justify-content-center opacity-01 rounded'>
+                <Container className='my-3 py-3 d-flex justify-content-center opacity-shortstory rounded'>
                     {/* <Table> */}
                         <tbody className=''>
                         <tr>
