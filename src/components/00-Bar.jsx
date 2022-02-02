@@ -10,6 +10,7 @@ const Bar=({handleChange,handleSubmit})=>{
             <Container>
 
             <Navbar.Brand href="#home">
+
                 <img
                 alt='logo'
                 src={umbrella}
@@ -18,6 +19,7 @@ const Bar=({handleChange,handleSubmit})=>{
                 className="d-inline-block align-top me-3"
                 />{' '}
             umbrella time
+
             </Navbar.Brand>
 
             <Form className="d-flex">
