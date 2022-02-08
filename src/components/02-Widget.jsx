@@ -1,7 +1,7 @@
 import {Col, Container, Row, Table} from 'react-bootstrap'
 import {FiClock} from 'react-icons/fi'
 import {BsCalendarEvent} from 'react-icons/bs'
-import {FaWind} from 'react-icons/fa'
+// import {FaWind} from 'react-icons/fa'
 
 
 const Widget=({actualData,forecastData})=>{
