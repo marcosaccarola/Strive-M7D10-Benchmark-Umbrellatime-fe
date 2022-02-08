@@ -89,7 +89,7 @@ const Widget=({actualData,forecastData})=>{
                                         {f.dt_txt.slice(11,16)}
                                     </td>
                                     <td className='col-4'>
-                                        <img className='' src={`http://openweathermap.org/img/wn/${f.weather[0].icon}.png`} alt='Weather icon' />
+                                        <img className='' src={`https://openweathermap.org/img/wn/${f.weather[0].icon}.png`} alt='Weather icon' />
                                     </td>
                                     <td className='col-4'>
                                         {parseInt(f.main.temp-273.15)
