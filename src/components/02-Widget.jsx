@@ -9,20 +9,25 @@ const Widget=({actualData,forecastData})=>{
     return(
     <Container className='rounded'>
 
-        <Row>
+        {/* <Row>
             <Col>
             <Container className='temperature-now'>{actualData.name}</Container>
             </Col>
-        </Row>
+        </Row> */}
 
-        <Row>
+        <Row className='mt-5'>
             <Col lg={6}>
                 <Container className='my-3 opacity-shortstory rounded'>
-                    <img src={`http://openweathermap.org/img/wn/${actualData.weather[0].icon}@4x.png`} alt='Weather icon' />
-                    <span className='temperature-now pe-5'>{parseInt(actualData.main.temp-273.15)}°C</span>
+                    <span className='temperature-now'>{actualData.name}</span>
+                    <div>
+                        {/* <img src={`http://openweathermap.org/img/wn/${actualData.weather[0].icon}@4x.png`} alt='Weather icon' /> */}
+                        <span className='temperature-now'>
+                            {parseInt(actualData.main.temp-273.15)}
+                            <span className='title-minor'>°C</span>
+                        </span>
+                    </div>
                 </Container>
-                <Container className='my-3 py-3 d-flex justify-content-center opacity-shortstory rounded'>
-                    {/* <Table> */}
+                {/* <Container className='my-3 py-3 d-flex justify-content-center opacity-shortstory rounded'>
                         <tbody className=''>
                         <tr>
                             <td><span className='text-start d-block pe-5'>Sunrise</span></td>
@@ -51,43 +56,49 @@ const Widget=({actualData,forecastData})=>{
                             <td><span className='text-start d-block ps-3'>mBar</span></td>
                         </tr>                             
                         </tbody>
-                    {/* </Table> */}
-                </Container>
+                </Container> */}
             </Col>
 
             <Col lg={6}>
                 <Container className='my-3 opacity-forecast rounded pb-2'>
                         <Table className='text-white'>
                             <tbody className=''>
-                            <tr>
-                            <td colSpan={7}>
-                                <div className='text-center mt-2'>
-                                <BsCalendarEvent className='me-3 text-muted' />Today
-                                </div>
-                            </td>
-                            </tr>
+                                <tr>
+                                    <td colSpan={7}>
+                                        <div className='text-center mt-2'>
+                                        <BsCalendarEvent className='me-3 text-muted' />Today
+                                        </div>
+                                    </td>
+                                </tr>
+
     {forecastData.list.map(f=>
                     <>
         {f.dt_txt.slice(11,13)==='00'&&
-                            <tr>
-                            <td colSpan={7}>
-                                <div className='text-center mt-5'>
-                                <BsCalendarEvent className='me-3 text-muted' />{new Date(f.dt_txt.slice(0,10)).toString().slice(0,15)}
-                                </div>
-                            </td>
-                            </tr>
+                                <tr>
+                                    <td colSpan={7}>
+                                        <div className='text-center mt-5'>
+                                            <BsCalendarEvent className='me-3 text-muted' />
+                                            {new Date(f.dt_txt.slice(0,10)).toString().slice(0,15)}
+                                        </div>
+                                    </td>
+                                </tr>
         }
-                            <tr>
-                            <td><FiClock className='text-secondary' /></td>
-                            <td>{f.dt_txt.slice(11,13)}</td>
-                            <td>
-                                <img className='' src={`http://openweathermap.org/img/wn/${f.weather[0].icon}.png`} alt='Weather icon' />
-                            </td>
-                            <td className='text-start'>{parseInt(f.main.temp-273.15)}<span className='text-minor'>°C</span></td>
-                            <td><FaWind className='' /></td>
-                            <td className='text-minor text-start'>{f.wind.deg}°</td>
-                            <td className='text-start'>{parseInt(f.wind.speed)}<span className='text-minor'>Km/h</span></td>
-                            </tr>
+                                <tr className='align-middle'>
+                                    <td className='col-4'>
+                                        <FiClock className='text-secondary me-2' />
+                                        {f.dt_txt.slice(11,16)}
+                                    </td>
+                                    <td className='col-4'>
+                                        <img className='' src={`http://openweathermap.org/img/wn/${f.weather[0].icon}.png`} alt='Weather icon' />
+                                    </td>
+                                    <td className='col-4'>
+                                        {parseInt(f.main.temp-273.15)
+                                        }<span className='text-minor'>°C</span>
+                                    </td>
+                                {/* <td><FaWind className='' /></td> */}
+                                {/* <td className='text-minor text-start'>{f.wind.deg}°</td> */}
+                                {/* <td className='text-start'>{parseInt(f.wind.speed)}<span className='text-minor'>Km/h</span></td> */}
+                                </tr>
                     </>
     )}
                             </tbody>
