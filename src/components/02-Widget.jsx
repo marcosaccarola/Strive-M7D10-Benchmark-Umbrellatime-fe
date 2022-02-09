@@ -1,19 +1,12 @@
 import {Col, Container, Row, Table} from 'react-bootstrap'
 import {FiClock} from 'react-icons/fi'
 import {BsCalendarEvent} from 'react-icons/bs'
-// import {FaWind} from 'react-icons/fa'
 
 
 const Widget=({actualData,forecastData})=>{
 
     return(
     <Container className='rounded'>
-
-        {/* <Row>
-            <Col>
-            <Container className='temperature-now'>{actualData.name}</Container>
-            </Col>
-        </Row> */}
 
         <Row className='mt-5'>
             <Col lg={6}>
@@ -66,7 +59,8 @@ const Widget=({actualData,forecastData})=>{
                                 <tr>
                                     <td colSpan={7}>
                                         <div className='text-center mt-2'>
-                                        <BsCalendarEvent className='me-3 text-muted' />Today
+                                        <BsCalendarEvent className='me-3 text-muted' />
+                                        Today
                                         </div>
                                     </td>
                                 </tr>
@@ -92,8 +86,8 @@ const Widget=({actualData,forecastData})=>{
                                         <img className='' src={`https://openweathermap.org/img/wn/${f.weather[0].icon}.png`} alt='Weather icon' />
                                     </td>
                                     <td className='col-4'>
-                                        {parseInt(f.main.temp-273.15)
-                                        }<span className='text-minor'>°C</span>
+                                        {parseInt(f.main.temp-273.15)}
+                                        <span className='text-minor'>°C</span>
                                     </td>
                                 {/* <td><FaWind className='' /></td> */}
                                 {/* <td className='text-minor text-start'>{f.wind.deg}°</td> */}

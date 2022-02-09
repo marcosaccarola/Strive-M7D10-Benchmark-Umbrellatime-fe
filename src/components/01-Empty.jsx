@@ -7,6 +7,7 @@ const Empty=({setActualData,setForecastData})=>{
 
     useEffect(() => {
       geo()
+      // eslint-disable-next-line
     }, []);
 
     const geo=()=>{
@@ -32,10 +33,10 @@ const Empty=({setActualData,setForecastData})=>{
         <>
             <Container className='text-white mt-5'>
                 <Row className='text-light'>
-                <p>Umbrella Time is waiting for your position</p>
-                <p>Please accept to show your position or text a city name</p>
-                <p>To avoid homonyms, add your country name, after a comma</p>
-                <p className='text-white'>Example: Rome, Italy</p>
+                    <p>Umbrella Time is waiting for your position.</p>
+                    <p>Please accept to show your position or text a city name in the form above.</p>
+                    <p className='mt-5'>To avoid homonyms, add your country name, after a comma.</p>
+                    <p className='text-white'>Example: Rome, Italy</p>
                 </Row>
             </Container>
         </>

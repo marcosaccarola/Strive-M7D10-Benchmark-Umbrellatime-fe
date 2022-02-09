@@ -33,7 +33,6 @@ export const getForecastData=async(query,setForecastData)=>{
     }
 }
 //************************************** ACTUAL DATA BY COORDINATES ***************************************
-
 export const getActualDataFromCoordinates=async(lat,lon,setActualData)=>{
     try {
         let response=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APP_ID}`)
@@ -49,7 +48,6 @@ export const getActualDataFromCoordinates=async(lat,lon,setActualData)=>{
     }
 }
 //********************************* FORECAST DATA BY COORDINATES *******************************************
-
 export const getForecastDataFromCoordinates=async(lat,lon,setForecastData)=>{
     try {
         let response=await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APP_ID}`)
